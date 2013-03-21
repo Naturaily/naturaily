@@ -18,14 +18,14 @@ Capistrano::Configuration.instance.load do
     end
 
     task :create_symlinks, :except => {:no_symlink => true} do
-      links_table = [
+      common_symlinks = [
         {source: 'config/database.yml'},
         {source: 'config/unicorn.rb'},
         {source: 'log'},
         {soruce: 'pids', dest: 'tmp/pids', clean: true}
       ]
 
-      run symlink_cmd(links_table)
+      run symlink_cmd(common_symlinks)
       logger.trace "Create symlinks. %s" % 'Done.'.green
     end
   end
