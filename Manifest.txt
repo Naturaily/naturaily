@@ -1,1 +1,14 @@
-
+.autotest
+History.txt
+Manifest.txt
+README.md
+Rakefile
+lib/naturaily.rb
+lib/naturaily/capistrano/capistrano.rb
+lib/naturaily/capistrano/extensions/common.rb
+lib/naturaily/capistrano/extensions/faye.rb
+lib/naturaily/capistrano/extensions/git.rb
+lib/naturaily/capistrano/extensions/rapns.rb
+lib/naturaily/capistrano/extensions/unicorn.rb
+naturaily.gemspec
+test/test_naturaily.rb
