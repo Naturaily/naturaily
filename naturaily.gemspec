@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "naturaily"
-  s.version = "0.1.0.20130321143728"
+  s.version = "0.1.0.20130321144041"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Przemys\u{142}aw Lusar"]
