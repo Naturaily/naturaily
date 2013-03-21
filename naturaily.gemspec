@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "naturaily"
-  s.version = "0.1.0.20130321144041"
+  s.version = "0.1.0.20130321144404"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Przemys\u{142}aw Lusar"]
@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.description = ""
   s.email = ["przemyslaw.lusar@naturaily.com"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt"]
-  s.files = [".autotest", "History.txt", "Manifest.txt", "README.md", "Rakefile", "lib/naturaily.rb", "lib/naturaily/capistrano.rb", "lib/naturaily/recipes/common.rb", "lib/naturaily/recipes/faye.rb", "lib/naturaily/recipes/git.rb", "lib/naturaily/recipes/rapns.rb", "lib/naturaily/recipes/unicorn.rb", "lib/naturaily/recipes/version_manager.rb", "naturaily.gemspec", "test/test_naturaily.rb", ".gemtest"]
-  s.homepage = "(The MIT License)"
+  s.files = [".autotest", ".gemtest", "History.txt", "Manifest.txt", "README.md", "Rakefile", "lib/naturaily.rb", "lib/naturaily/capistrano.rb", "lib/naturaily/recipes/common.rb", "lib/naturaily/recipes/faye.rb", "lib/naturaily/recipes/git.rb", "lib/naturaily/recipes/rapns.rb", "lib/naturaily/recipes/unicorn.rb", "lib/naturaily/recipes/version_manager.rb", "naturaily.gemspec", "test/test_naturaily.rb"]
+  s.homepage = "https://github.com/Naturaily/naturaily"
   s.licenses = ["MIT"]
   s.rdoc_options = ["--main", "README.md"]
   s.require_paths = ["lib"]
