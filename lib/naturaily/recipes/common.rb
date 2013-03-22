@@ -2,6 +2,7 @@ Capistrano::Configuration.instance.load do
   after 'deploy:finalize_update', 'common:create_symlinks'
 
   _cset :symlinks, []
+  _cset :shared_children, %w(public/system log tmp/pids pids config)
 
   namespace :common do
     def symlink_cmd(table)

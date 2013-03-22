@@ -1,6 +1,14 @@
 Capistrano::Configuration.instance.load do
 
-  def version_manager(manager, options = {})
+  _cset :version_manager, [:rbenv]
+
+  on :start, only: :deploy do
+    set_version_manager
+  end
+
+  def set_version_manager
+    manager, options = self.version_manager
+
     case manager
     when :rbenv
       _cset :default_environment, {'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"}

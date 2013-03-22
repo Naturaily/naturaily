@@ -1,5 +1,4 @@
 Capistrano::Configuration.instance.load do
-
   _cset(:thin_pid) {"#{shared_path}/pids/private_pub_thin.pid"}
   _cset(:thin_log) {"#{shared_path}/log/private_pub.log"}
   _cset(:thin_config) {"#{current_path}/config/private_pub_thin.yml"}
