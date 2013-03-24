@@ -1,13 +1,10 @@
-require 'colored'
+#encoding: utf-8
 
-GEM_RECIPES = [
-  [:sidekiq, 'sidekiq/capistrano'],
-  [:whenever, 'whenever/capistrano']
-]
+require 'colored'
 
 Capistrano::Configuration.instance.load do
 
-  on :after, only: stages do
+  on :load do
     load_recipes
   end
 
@@ -15,12 +12,12 @@ Capistrano::Configuration.instance.load do
     loaded = self.recipes.map do |recipe|
       recipe, *environments = recipe if recipe.is_a?(Array)
 
-      next if environments and not environments.include?(self.rails_env)
+      next if environments and not environments.include?(self.rails_env.to_sym)
 
       filename = File.expand_path("recipes/#{recipe}.rb", File.dirname(__FILE__))
 
-      if path = gem_recipe(recipe) or File.exists?(filename)
-        require path || filename
+      if File.exists?(filename)
+        require filename
 
         recipe
       else
@@ -28,15 +25,8 @@ Capistrano::Configuration.instance.load do
       end
     end
 
-    logger.trace "Loaded recipes: #{loaded.compact.join(', ')}".red
+    puts "---> Loading recipes: #{loaded.compact.join(', ')}"
   end
 
-  def gem_recipe(name)
-    result = GEM_RECIPES.find do |gem_name,_|
-      gem_name == name
-    end
-
-    result ? result.last : nil
-  end
 
 end

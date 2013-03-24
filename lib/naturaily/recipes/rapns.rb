@@ -5,6 +5,10 @@ Capistrano::Configuration.instance.load do
 
   _cset(:rapns_pid) {"#{current_path}/tmp/pids/rapns.pid"}
 
+  pretty_log('rapns:reload', 'Reloading rapns daemon')
+  pretty_log('rapns:start', 'Starting rapns daemon')
+  pretty_log('rapns:stop', 'Stoping rapns daemon')
+
   namespace :rapns do
     desc "Manual restart rapns daemon"
     task :restart do

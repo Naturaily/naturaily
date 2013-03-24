@@ -4,6 +4,12 @@ Capistrano::Configuration.instance.load do
   _cset :symlinks, []
   _cset :shared_children, %w(public/system log tmp/pids pids config)
 
+  pretty_log('deploy:update_code', 'Updating base code')
+  pretty_log('bundle:install', 'Updating bundle')
+  pretty_log('common:create_symlinks', 'Creating symlinks')
+  pretty_log('deploy:assets:precompile', 'Updating assets')
+  pretty_log('deploy:cleanup', 'Cleaning up')
+
   namespace :common do
     def symlink_cmd(table)
       cmd = ["cd #{release_path}"]
