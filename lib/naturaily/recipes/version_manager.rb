@@ -1,7 +1,7 @@
 Capistrano::Configuration.instance.load do
   _cset :version_manager, [:rbenv]
 
-  on :before, only: :deploy do
+  on :after, only: 'common:load_recipes' do
     set_version_manager
   end
 

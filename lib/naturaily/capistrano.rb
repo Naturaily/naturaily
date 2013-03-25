@@ -1,14 +1,18 @@
 #encoding: utf-8
-
 require 'colored'
 
 Capistrano::Configuration.instance.load do
 
-  on :load do
-    load_recipes
+  on :after, 'common:load_recipes', only: self.stages
+
+  namespace :common do
+    desc 'Load custom recipes'
+    task :load_recipes do
+      require_recipes
+    end
   end
 
-  def load_recipes
+  def require_recipes
     loaded = self.recipes.map do |recipe|
       recipe, *environments = recipe if recipe.is_a?(Array)
 
@@ -27,6 +31,5 @@ Capistrano::Configuration.instance.load do
 
     puts "---> Loading recipes: #{loaded.compact.join(', ')}"
   end
-
 
 end
