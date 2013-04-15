@@ -10,15 +10,12 @@ Capistrano::Configuration.instance.load do
   pretty_log('faye:ssl:stop', 'Stoping faye daemon with SSL support')
   pretty_log('faye:ssl:start', 'Starting faye daemon with SSL support')
 
-  # NOTE: staging configuration
   namespace :faye do
     desc "Restart private pub process"
-    #FIXME: should check how to solve this problem
     task :restart do
       stop
       start
     end
-
 
     desc "Start private pub/faye process"
     task :start do
