@@ -42,6 +42,7 @@ Capistrano::Configuration.instance.load do
 
   def pretty_log(task, title, options = {})
     dots = OUTPUT_LENGTH - title.length
+    dots = 0 if dots < 0
 
     return unless @custom_output
 
