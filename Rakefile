@@ -5,7 +5,7 @@ require "hoe"
 
 Hoe.plugin :git
 Hoe.plugin :gemspec
-Hoe.plugin :bundler
+Hoe.plugin :debugging
 Hoe.plugin :minitest
 
 Hoe.spec "naturaily" do
