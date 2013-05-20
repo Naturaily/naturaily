@@ -17,5 +17,6 @@ Hoe.spec "naturaily" do
   self.urls = {'home' => 'https://github.com/Naturaily/naturaily'}
 
   dependency 'capistrano', "~> 2.0"
+  dependency 'railtie', "~> 3.2"
   dependency 'colored', "~> 1.2"
 end
