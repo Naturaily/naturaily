@@ -39,12 +39,12 @@ Capistrano::Configuration.instance.load do
 
       desc "Start private pub process"
       task :start do
-        run "cd #{deploy_to}/current && bundle exec thin -E #{rails_env} -P #{faye_pid} -l #{faye_log} -C #{ssl_config} -d start"
+        run "cd #{deploy_to}/current && bundle exec thin -P #{faye_pid} -l #{faye_log} -C #{ssl_config} -d start"
       end
 
       desc "Stop private pub process"
       task :stop do
-        run "cd #{deploy_to}/current && bundle exec thin -E #{rails_env} -P #{faye_pid} -l #{faye_log} -C #{ssl_config} -d stop"
+        run "cd #{deploy_to}/current && bundle exec thin -P #{faye_pid} -l #{faye_log} -C #{ssl_config} -d stop"
       end
     end
   end
