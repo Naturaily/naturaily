@@ -27,7 +27,6 @@ Capistrano::Configuration.instance.load do
     task :create_symlinks, :except => {:no_symlink => true} do
       common_symlinks = [
         {source: 'config/database.yml'},
-        {source: 'config/unicorn.rb'},
         {source: 'log'},
         {soruce: 'pids', dest: 'tmp/pids', clean: true}
       ]
